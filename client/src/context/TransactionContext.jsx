@@ -34,7 +34,7 @@ export const TransactionProvider = ({ children }) => {
 
   const checkIfTransactionExists = async () => {
     try {
-      if (!ethereum) return alert("please install metamask");
+      if (!ethereum) return console.log("metamask is not installed");
 
       const tranasactionContract = getEthereumContract();
       const currentTransactionCount =
@@ -56,7 +56,7 @@ export const TransactionProvider = ({ children }) => {
 
   const checkIfWalletIsConnected = async () => {
     try {
-      if (!ethereum) return alert("please install metamask");
+      if (!ethereum) return console.log("metamask is not installed");
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
@@ -77,7 +77,7 @@ export const TransactionProvider = ({ children }) => {
 
   const connectWallet = async () => {
     try {
-      if (!ethereum) return alert("please install metamask");
+      if (!ethereum) return console.log("metamask is not installed");
 
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
@@ -91,7 +91,7 @@ export const TransactionProvider = ({ children }) => {
 
   const sendTransaction = async () => {
     try {
-      if (!ethereum) return alert("please install metamask");
+      if (!ethereum) return console.log("metamask is not installed");
 
       const { addressTo, amount, keyword, message } = formData;
       const transactionContract = getEthereumContract();
